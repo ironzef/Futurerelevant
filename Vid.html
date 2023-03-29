@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Relevant Consulting LLP</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;400;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+  <link rel="icon" href="icon/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/Vid.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <style>
+    h1 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Prompt', sans-serif;
+      color: white;
+      background: hsl(0, 0%, 100%);
+      overflow-x: hidden;
+    }
+
+    section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 400px;
+      padding-top: 100px;
+    }
+
+    .blue {
+      background: #3c31dd;
+    }
+
+    .red {
+      background: #ffffff;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 400px;
+      padding-top: 100px;
+    }
+
+    .pink {
+      background: #ff0066;
+      overflow: hidden;
+    }
+
+    .dark {
+      background: #000000;
+    }
+
+    /* Curved bg with plain CSS */
+
+    .curve {
+      position: absolute;
+      height: 250px;
+      width: 100%;
+      bottom: 0;
+      text-align: center;
+    }
+
+    .curve::before {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 100% 50%;
+      width: 55%;
+      height: 100%;
+      transform: translate(85%, 60%);
+      background-color: hsl(216, 21%, 16%);
+    }
+
+    .curve::after {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 100% 50%;
+      width: 55%;
+      height: 100%;
+      background-color: #3c31dd;
+      transform: translate(-4%, 40%);
+      z-index: -1;
+    }
+
+    /* Bubble bg with plain CSS */
+
+    .bubble::after {
+      content: '';
+      border-top-left-radius: 50% 100%;
+      border-top-right-radius: 50% 100%;
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+      width: 100%;
+      background-color: #000000;
+      height: 85%;
+    }
+
+    /* Curved bg with SVG via https://www.shapedivider.app/ */
+
+    .wave {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .wave svg {
+      position: relative;
+      display: block;
+      width: calc(103% + 1.3px);
+      height: 262px;
+    }
+
+    .wave .shape-fill {
+      fill: hsl(0, 0%, 0%);
+    }
+
+    /* SVG background image via https://haikei.app/ */
+
+    .spacer {
+      aspect-ratio: 960/300;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .layer1 {
+      background-image: url('./layer1.svg');
+    }
+
+    .layer2 {
+      background-image: url('./layer2.svg');
+    }
+
+    .layer3 {
+      background-image: url('./layer3.svg');
+    }
+
+    .layer4 {
+      background-image: url('./LayerVid.svg');
+    }
+
+    .flip {
+      transform: rotate(180deg);
+    }
+
+    /* Blobs SVG background image via https://haikei.app/ */
+
+    .blob-motion {
+      position: absolute;
+      transform: translateY(-20%);
+      z-index: 0;
+    }
+
+    .blob-content {
+      z-index: 1;
+    }
+
+    .blobs {
+      width: 100%;
+      background: url('./blobs.svg') no-repeat bottom / cover;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-logo">
+        <img src="WhiteLogo.png" />
+        <p class="Loguu">Future <span class="AAS">Relevant</span> Consulting</p>
+      </div>
+      <!-- This is the menu that will be shown on mobile devices-->
+      <nav class="nav-mobile">
+        <!-- Hamburger menu -->
+        <input type="checkbox" class="toggler" />
+        <div class="hamburger-menu">
+          <div></div>
+        </div>
+        <div class="menu">
+          <div class="background-overlay"></div>
+          <div class="menu-overlay">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="About.html">About Us</a></li>
+              <li><a href="Services.html">Services</a></li>
+              <li><a href="WHYFRC.html">Why FRC</a></li>
+              <li><a href="Vid.html">Whitepapers</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li role="separator"></li>
+            </ul>
+            <div class="sociall">
+              <a href="https://twitter.com/ManishaDalmia3" target="_blank" rel="noopener noreferrer"><i
+                  class="fab fa-twitter"></i></a>
+              <a href="https://www.facebook.com/manisha.dalmia.3" target="_blank" rel="noopener noreferrer"><i
+                  class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/futurerelevantllp/ " target="_blank" rel="noopener noreferrer"><i
+                  class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/dr-rajiv-dalmia-%F0%9F%8C%9F-3b05672/" target="_blank"
+                rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <span class="copy">&copy; 2023 Future Relevant Consulting LLP</span>
+            <div class="menu-overlay-logo">
+              <img src="" />
+            </div>
+          </div>
+        </div>
+
+      </nav>
+      <!-- This is the menu that will be shown on Desktop -->
+      <nav class="nav-desktop">
+        <!-- Site menu -->
+        <ul>
+          <li><a href="index.html" class="Opage">Home</a></li>
+          <li><a href="About.html" class="Opage">About Us</a></li>
+          <li><a href="Services.html" class="Opage">Services</a></li>
+          <li><a href="WHYFRC.html" class="Opage">Why FRC</a></li>
+          <li><a href="Vid.html" class="ofpage">Whitepapers</a></li>
+          <li><a href="contact.html" class="Opage">Contact Us</a></li>
+        </ul>
+
+  </header>
+
+  <section class="dark">
+    <div class="container">
+      <p class="HHH">Few Links For Your <span class="YY">Reference</span> & Pleasure Reading</p>
+    </div>
+  </section>
+
+  <div class="spacer layer4 flip"></div>
+
+  <p class="PPP">Our Book</p>
+  <div class="albums">
+    <div class="albums-container">
+      <div class="albums-cards-container">
+
+        <div class="album">
+          <img height="280px" src="book.jpg" />
+          <div class="album-info">
+            <h2>Future Relevant Me</h2>
+            <h4>Book-Front</h4>
+            <a href="https://www.amazon.in/dp/8119058623?ref_=cm_sw_r_apan_dp_XG58RYC0PGT9DHRCWGGB">Buy NOW</a>
+          </div>
+        </div>
+
+        <div class="album">
+          <img height="280px" src="91omp6CDvWL.jpg" />
+          <div class="album-info">
+            <h2>Future Relevant Me</h2>
+            <h4>Book-Back</h4>
+            <a href="https://www.amazon.in/dp/8119058623?ref_=cm_sw_r_apan_dp_XG58RYC0PGT9DHRCWGGB" download>BUY NOW</a>
+          </div>
+        </div>
+        <div class="album">
+          <img height="280px" src="1.jpeg" />
+          <div class="album-info">
+            <h2>Future Relevant Me</h2>
+            <h4>Book-Inside</h4>
+            <a href="https://www.amazon.in/dp/8119058623?ref_=cm_sw_r_apan_dp_XG58RYC0PGT9DHRCWGGB" download>BUY NOW</a>
+          </div>
+        </div>
+        <div class="album">
+          <img height="280px" src="6.jpeg" />
+          <div class="album-info">
+            <h2>Future Relevant Me</h2>
+            <h4>Book-Inside</h4>
+            <a href="https://www.amazon.in/dp/8119058623?ref_=cm_sw_r_apan_dp_XG58RYC0PGT9DHRCWGGB" download>BUY NOW</a>
+          </div>
+        </div>
+        <div class="album">
+          <img height="280px" src="2.jpeg" />
+          <div class="album-info">
+            <h2>Future Relevant Me</h2>
+            <h4>Book-Inside</h4>
+            <a href="https://www.amazon.in/dp/8119058623?ref_=cm_sw_r_apan_dp_XG58RYC0PGT9DHRCWGGB" download>BUY NOW</a>
+          </div>
+        </div>
+        <div class="album">
+          <img height="280px" src="3.jpeg" />
+          <div class="album-info">
+            <h2>Future Relevant Me</h2>
+            <h4>Book-Inside</h4>
+            <a href="https://www.amazon.in/dp/8119058623?ref_=cm_sw_r_apan_dp_XG58RYC0PGT9DHRCWGGB" download>BUY NOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="PPPP">Videos</p>
+    <div class="albums">
+      <div class="albums-container">
+        <div class="albums-cards-container">
+          <div class="album">
+            <div>
+              <iframe class="Video" width="560" height="315" src="https://www.youtube.com/embed/R5CKDm34hDs"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+            <div class="album-info">
+              <h2>Habit Worth Having</h2>
+              <h4>Video</h4>
+              <a href="https://youtu.be/R5CKDm34hDs">Watch NOW</a>
+            </div>
+          </div>
+          <div class="album">
+            <iframe class="Video" width="560" height="315" src="https://www.youtube.com/embed/xHS_1WXGuD4"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+            <div class="album-info">
+              <h2>Life Lessions</h2>
+              <h4>Video</h4>
+              <a href="https://youtu.be/xHS_1WXGuD4">Watch NOW</a>
+            </div>
+          </div>
+          <div class="album">
+            <iframe class="Video" width="560" height="315" src="https://www.youtube.com/embed/AxUd1pI20K4"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+            <div class="album-info">
+              <h2>Learnings from The Blacklist</h2>
+              <h4>Video</h4>
+              <a href="https://youtu.be/AxUd1pI20K4">Watch NOW</a>
+            </div>
+          </div>
+          <div class="album">
+            <iframe class="Video" width="560" height="315" src="https://www.youtube.com/embed/80Bie_JqmG8"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+            <div class="album-info">
+              <h2>Best Motivational Video</h2>
+              <h4>Video</h4>
+              <a href="https://youtu.be/80Bie_JqmG8">Watch NOW</a>
+            </div>
+          </div>
+          <div class="album">
+            <iframe class="Video" width="560" height="315" src="https://www.youtube.com/embed/DT8J76Ovhn8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="album-info">
+              <h2>Value future Relevant</h2>
+              <h4>Video</h4>
+              <a href="https://youtu.be/DT8J76Ovhn8">Watch NOW</a>
+            </div>
+          </div>
+          <div class="album">
+            <iframe class="Video" width="560" height="315" src="https://www.youtube.com/embed/8mL1QwoEQmo"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+            <div class="album-info">
+              <h2>Power Of 108</h2>
+              <h4>Video</h4>
+              <a href="https://youtu.be/8mL1QwoEQmo">Watch NOW</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="spacer layer4"></div>
+
+    </section>
+    <!-- FOOTER -->
+    <footer class="blobs">
+      <nav class="footer-nav">
+        <div class="social">
+          <a href="https://www.facebook.com/manisha.dalmia.3" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/futurerelevantllp/" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@rajivdalmia78" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/in/dr-rajiv-dalmia-%F0%9F%8C%9F-3b05672/" target="_blank"
+            rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com/ManishaDalmia3" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/manisha-dalmia-375813121/" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="https://www.youtube.com/@futurerelevantconsulting" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-youtube"></i></a>
+        </div>
+        <div class="country">
+          <a href="https://en.wikipedia.org/wiki/India"><span>INDIA</span><img src="jwymep5tm3xvcevmv5vy.jpg" /></a>
+        </div>
+        <div class="bottom-links">
+          <span>&copy; 2023 Future Relevant Consulting LLP</span>
+        </div>
+      </nav>
+    </footer>
+    <script>
+      ScrollReveal({
+        reset: false,
+        distance: '80px',
+        duration: 2500,
+        delay: 400
+      });
+      ScrollReveal().reveal('.HHH,.PPP,.PPPP', { delay: 200, });
+    </script>
+</body>
+
+</html>
